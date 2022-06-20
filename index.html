@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+    <title>Pomodoro timer</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="timer">
+            <div class="timer__buttons">
+                <button class="timer__button timer__button-active" data-mode="pomodoro">Pomodoro</button>
+                <button class="timer__button" data-mode="shortBreak">Short break</button>
+                <button class="timer__button" data-mode="longBreak">Long break</button>
+            </div>
+            <div class="timer__clock">
+                <span>25:00</span>
+                <button class="timer__settings"></button>
+            </div>
+            <button class="timer__start" data-action="start">Start</button>
+
+            <div class="timer__audio">
+                <audio src="./assets/audio/backToWork.mp3" data-sound="pomodoro"></audio>
+                <audio src="./assets/audio/break.mp3" data-sound="shortBreak"></audio>
+                <audio src="./assets/audio/break.mp3" data-sound="longBreak"></audio>
+            </div>
+        </div>
+
+        <div class="modal" data-modal="settings">
+            <form action="" class="modal__form">
+                <div class="modal__row">
+                    <p>Please choose time for uninterrupted work: </p>
+                    <div class="modal__options">
+                        <label class="modal__label">
+                            <input class="modal__checkbox" type="radio" name="pomodoro" value="15">
+                            <span>15</span>
+                        </label>
+                        <label class="modal__label">
+                            <input class="modal__checkbox" type="radio" name="pomodoro" value="25" checked>
+                            <span>25</span>
+                        </label>
+                        <label class="modal__label">
+                            <input class="modal__checkbox" type="radio" name="pomodoro" value="35">
+                            <span>35</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal__row">
+                    <p>Please choose time for short break: </p>
+                    <div class="modal__options">
+                        <label class="modal__label">
+                            <input class="modal__checkbox" type="radio" name="shortBreak" value="5" checked>
+                            <span>5</span>
+                        </label>
+                        <label class="modal__label">
+                            <input class="modal__checkbox" type="radio" name="shortBreak" value="10">
+                            <span>10</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal__row">
+                    <p>Please choose time for long break: </p>
+                    <div class="modal__options">
+                        <label class="modal__label">
+                            <input class="modal__checkbox" type="radio" name="longBreak" value="10">
+                            <span>10</span>
+                        </label>
+                        <label class="modal__label">
+                            <input class="modal__checkbox" type="radio" name="longBreak" value="15" checked>
+                            <span>15</span>
+                        </label>
+                        <label class="modal__label">
+                            <input class="modal__checkbox" type="radio" name="longBreak" value="20">
+                            <span>20</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="modal__submit">save</button>
+            </form>
+            <button class="modal__close" data-action="close"></button>
+        </div>
+        <div class="overlay"></div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
